@@ -72,7 +72,7 @@ Commands
   capakit run https://github.com/capakit/realtime-voice-demo-kit \
     --mount models=~/.capakit/models
 - Test:
-  capakit test /Users/roman/Code/capakit/demo_kits/realtime-voice-demo-kit
+  capakit test .
 ```
 
 ## Run
