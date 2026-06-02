@@ -1,0 +1,15 @@
+# Environment variables
+.env
+
+# Generated state
+_state/
+_packages/
+.apply
+
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# OS / editor
+.DS_Store

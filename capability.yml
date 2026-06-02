@@ -1,0 +1,114 @@
+version: '1'
+name: realtime-voice
+options:
+  chat_model:
+    kind: string
+    default: ggml-org/gemma-3-270m-it-GGUF:Q8_0
+    description: Local GGUF/Hugging Face model spec used for assistant replies.
+  gpu:
+    kind: enum
+    default: metal
+    enum_values:
+    - none
+    - metal
+    description: Local GPU acceleration mode for bundled llama.cpp.
+  llama_context_size:
+    kind: number
+    default: 8192
+    description: Context size passed through to the bundled llama.cpp dependency.
+  asr_model:
+    kind: string
+    default: Xenova/whisper-tiny.en
+    description: Transformers.js Whisper model used for server-side speech recognition.
+  tts_model:
+    kind: string
+    default: onnx-community/Kokoro-82M-v1.0-ONNX
+    description: Kokoro ONNX model used for server-side neural speech synthesis.
+  tts_voice:
+    kind: string
+    default: af_bella
+    description: Kokoro voice id used for server-side neural speech synthesis.
+dependencies:
+  llama:
+    source:
+      package: https://github.com/capakit/llama-cpp-local-kit
+    options:
+      default_model:
+        from_option: chat_model
+      gpu:
+        from_option: gpu
+      context_size:
+        from_option: llama_context_size
+    mount_bindings:
+      models: models
+host_mounts:
+  models:
+    usage: Local model cache for llama.cpp, Whisper ASR, and Kokoro TTS
+    access: read_write
+workloads:
+  llama:
+    import:
+      dependency: llama
+      export: oaic
+  asr-local-whisper:
+    mounts:
+    - mount_mid: models
+      access: read_write
+    endpoints:
+    - http
+    - oaic
+    runtime:
+      source:
+        toolchain: bun
+        prepare:
+          command: bun install
+          allow_network: true
+        start:
+          command: bun run start
+          allow_network: true
+          env_from_options:
+            ASR_MODEL: asr_model
+  tts-local-kokoro:
+    mounts:
+    - mount_mid: models
+      access: read_write
+    endpoints:
+    - http
+    - oaic
+    runtime:
+      source:
+        toolchain: bun
+        prepare:
+          command: bun install
+          allow_network: true
+        start:
+          command: bun run start
+          allow_network: true
+          env_from_options:
+            TTS_MODEL: tts_model
+            TTS_VOICE: tts_voice
+  voice-session:
+    connections:
+    - llama
+    - asr-local-whisper
+    - tts-local-kokoro
+    endpoints:
+    - http
+    - protocol: http
+      path: /test
+    runtime:
+      source:
+        toolchain: bun
+        prepare:
+          command: bun install
+          allow_network: true
+        start:
+          command: bun run start
+          env_from_options:
+            VOICE_CHAT_MODEL: chat_model
+            VOICE_TTS_VOICE: tts_voice
+expose:
+- path: /voice
+  target: voice-session
+  endpoints:
+  - http

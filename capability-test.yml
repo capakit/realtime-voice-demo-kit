@@ -1,0 +1,30 @@
+tests:
+  - id: voice-stack-e2e-smoke
+    kind: http
+    test: checks voice stack chat, ASR readiness, and TTS output
+    target:
+      workload: voice-session
+      endpoint: /test
+    request:
+      method: POST
+      path: /voice-stack-e2e-smoke
+    verboseOutput:
+      - $.asr_model_count
+      - $.reply
+      - $.speech_bytes
+    validations:
+      - $.asr_model_count.gte(1)
+      - $.reply.exists()
+      - $.speech_bytes.gte(100)
+  - id: voice-session-typecheck
+    kind: exec
+    test: voice session workload typechecks
+    target:
+      workload: voice-session
+    command:
+      - bun
+      - x
+      - tsc
+      - --noEmit
+    validations:
+      - $.exit_code.eq(0)

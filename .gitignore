@@ -1,0 +1,21 @@
+# Environment variables
+.env
+# Generated state
+_state/
+_packages/
+.apply
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+# Node
+node_modules/
+dist/
+# Rust
+target/
+# OS / editor
+.DS_Store
+*.tsbuildinfo
+.idea
+*.iml

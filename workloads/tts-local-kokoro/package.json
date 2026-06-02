@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@huggingface/transformers": "3.8.1",
+    "kokoro-js": "1.2.1",
+    "@capakit/sdk": "0.0.6-dev.20260602054715.5ddbb986",
+    "@picocss/pico": "2.1.1",
+    "hono": "4.12.23",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "openai": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.12.0",
+    "typescript": "6.0.3",
+    "vite": "8.0.14",
+    "@vitejs/plugin-react": "6.0.2",
+    "@types/react": "19.2.15",
+    "@types/react-dom": "19.2.3"
+  },
+  "name": "tts-local-kokoro",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit",
+    "start": "bun run build && bun run src/index.ts"
+  },
+  "type": "module",
+  "version": "0.1.0"
+}

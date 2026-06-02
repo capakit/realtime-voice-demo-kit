@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "displayName": "Realtime Voice",
+  "repo": "https://github.com/capakit/realtime-voice-demo-kit",
+  "description": "Local-first AI app Kit for a browser voice conversation loop with speech recognition, local chat, and speech output.",
+  "screenshot": "screenshot.png",
+  "whatItDoes": [
+    "Streams microphone audio from the browser to a CapaKit workload.",
+    "Transcribes speech with a local Whisper model.",
+    "Generates assistant replies through a bundled local llama.cpp dependency.",
+    "Speaks replies with a local Kokoro TTS model."
+  ],
+  "technologies": [
+    "CapaKit HTTP workload",
+    "WebSocket browser audio",
+    "Bundled llama.cpp AI app Kit dependency",
+    "Transformers.js Whisper ASR",
+    "Kokoro TTS",
+    "React",
+    "Vite",
+    "TypeScript",
+    "Bun"
+  ],
+  "catalog": {
+    "featured": true,
+    "order": 70,
+    "tags": [
+      "web-ui",
+      "voice",
+      "local-llm"
+    ]
+  }
+}
