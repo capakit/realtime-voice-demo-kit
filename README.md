@@ -9,6 +9,8 @@ Local-first AI app Kit for a browser voice conversation loop with speech recogni
 
 ![Realtime Voice screenshot](screenshot.png)
 
+**Tags:** `web-ui` `voice` `audio` `speech-to-text` `text-to-speech` `llama.cpp` `transformers.js` `whisper` `kokoro` `local-ai` `react` `vite` `typescript` `bun`
+
 ## What It Does
 
 - Streams microphone audio from the browser to a CapaKit workload.

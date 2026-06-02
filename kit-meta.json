@@ -27,7 +27,18 @@
     "tags": [
       "web-ui",
       "voice",
-      "local-llm"
+      "audio",
+      "speech-to-text",
+      "text-to-speech",
+      "llama.cpp",
+      "transformers.js",
+      "whisper",
+      "kokoro",
+      "local-ai",
+      "react",
+      "vite",
+      "typescript",
+      "bun"
     ]
   }
 }
