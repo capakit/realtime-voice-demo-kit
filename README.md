@@ -9,7 +9,7 @@ Local-first AI app Kit for a browser voice conversation loop with speech recogni
 
 ![Realtime Voice screenshot](screenshot.png)
 
-**Tags:** `web-ui` `voice` `audio` `speech-to-text` `text-to-speech` `llama.cpp` `transformers.js` `whisper` `kokoro` `local-ai` `react` `vite` `typescript` `bun`
+**Tags:** `web-ui` `websocket` `voice` `audio` `speech-to-text` `text-to-speech` `llama.cpp` `transformers.js` `whisper` `kokoro` `local-ai` `react` `vite` `typescript` `bun`
 
 ## What It Does
 

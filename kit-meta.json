@@ -26,6 +26,7 @@
     "order": 70,
     "tags": [
       "web-ui",
+      "websocket",
       "voice",
       "audio",
       "speech-to-text",
