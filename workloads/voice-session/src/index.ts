@@ -81,7 +81,7 @@ Bun.serve({
     ...listenOptions(bind),
     async fetch(request, server) {
         const url = mountedUrl(request);
-        if (url.pathname === "/test/voice-stack-e2e-smoke" || url.pathname === "/voice/test/voice-stack-e2e-smoke") {
+        if (lastPathSegment(url.pathname) === "voice-stack-e2e-smoke") {
             if (request.method !== "POST") {
                 return Response.json({ error: "method not allowed" }, { status: 405 });
             }
@@ -670,6 +670,10 @@ function mountedUrl(request: Request): URL {
         url.pathname = url.pathname.slice("/http".length);
     }
     return url;
+}
+
+function lastPathSegment(pathname: string): string | undefined {
+    return pathname.split("/").filter(Boolean).at(-1);
 }
 
 function clientAssetPath(pathname: string): string | null {
