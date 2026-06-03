@@ -5,7 +5,7 @@
     "": {
       "name": "tts-stub-web",
       "dependencies": {
-        "@capakit/sdk": "0.0.6-dev.20260603115503.29671fe8",
+        "@capakit/sdk": "0.0.6-dev.20260603120812.cd880dfb",
         "@huggingface/transformers": "3.8.1",
         "@picocss/pico": "2.1.1",
         "hono": "4.12.23",
@@ -25,7 +25,7 @@
     },
   },
   "packages": {
-    "@capakit/sdk": ["@capakit/sdk@0.0.6-dev.20260603115503.29671fe8", "", { "peerDependencies": { "@a2a-js/sdk": "^0.3.13", "@anthropic-ai/sdk": "^0.100.1", "@google/genai": "^2.7.0", "@modelcontextprotocol/sdk": "^1.29.0", "openai": "^6.41.0", "ws": "^8.21.0" }, "optionalPeers": ["@a2a-js/sdk", "@anthropic-ai/sdk", "@google/genai", "@modelcontextprotocol/sdk", "openai", "ws"] }, "sha512-MCGb0i4yAD+0XguuIC/ygvmKS3kxkmQoJHPO4o3Pqhgl7qhE9aTb9TVUPRaRyP+8wmB2zOLKx7A7e86m+w4XZw=="],
+    "@capakit/sdk": ["@capakit/sdk@0.0.6-dev.20260603120812.cd880dfb", "", { "peerDependencies": { "@a2a-js/sdk": "^0.3.13", "@anthropic-ai/sdk": "^0.100.1", "@google/genai": "^2.7.0", "@modelcontextprotocol/sdk": "^1.29.0", "openai": "^6.41.0", "ws": "^8.21.0" }, "optionalPeers": ["@a2a-js/sdk", "@anthropic-ai/sdk", "@google/genai", "@modelcontextprotocol/sdk", "openai", "ws"] }, "sha512-YcNuSZNLccEXv2j4X7Cfeq0Ce9S4D15ijPdcHABIGDNPRcGqUbkKDXJ4cFbF8CBJNXypzF0+KZmSF/ED36NGEQ=="],
 
     "@emnapi/core": ["@emnapi/core@1.10.0", "", { "dependencies": { "@emnapi/wasi-threads": "1.2.1", "tslib": "^2.4.0" } }, "sha512-yq6OkJ4p82CAfPl0u9mQebQHKPJkY7WrIuk205cTYnYe+k2Z8YBh11FrbRG/H6ihirqcacOgl2BIO8oyMQLeXw=="],
 
