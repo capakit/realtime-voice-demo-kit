@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@capakit/sdk": "0.0.6-dev.20260603120812.cd880dfb",
+    "@capakit/sdk": "0.0.6",
     "@picocss/pico": "2.1.1",
     "hono": "4.12.23",
     "react": "19.2.6",

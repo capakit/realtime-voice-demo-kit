@@ -35,6 +35,8 @@ dependencies:
     options:
       default_model:
         from_option: chat_model
+      hydrate_models:
+        from_option: chat_model
       gpu:
         from_option: gpu
       context_size:
@@ -49,7 +51,7 @@ workloads:
   llama:
     import:
       dependency: llama
-      export: oaic
+      exposed_path: /oaic
   asr-local-whisper:
     mounts:
     - mount_mid: models
@@ -62,10 +64,8 @@ workloads:
         toolchain: bun
         prepare:
           command: bun install
-          allow_network: true
         start:
           command: bun run start
-          allow_network: true
           env_from_options:
             ASR_MODEL: asr_model
   tts-local-kokoro:
@@ -80,10 +80,8 @@ workloads:
         toolchain: bun
         prepare:
           command: bun install
-          allow_network: true
         start:
           command: bun run start
-          allow_network: true
           env_from_options:
             TTS_MODEL: tts_model
             TTS_VOICE: tts_voice
@@ -101,7 +99,6 @@ workloads:
         toolchain: bun
         prepare:
           command: bun install
-          allow_network: true
         start:
           command: bun run start
           env_from_options:
