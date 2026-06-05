@@ -1,6 +1,6 @@
 import { endpointPath, hostMountMid } from "@capakit/sdk";
-import type { RunnerHttpHandlerContext } from "@capakit/sdk";
-import type { RunnerSdk } from "@capakit/sdk";
+import type { WorkloadHttpHandlerContext } from "@capakit/sdk";
+import type { WorkloadSdk } from "@capakit/sdk";
 import { mountOaic } from "@capakit/sdk/oaic";
 import { env, pipeline } from "@xenova/transformers";
 import { mkdir } from "node:fs/promises";
@@ -74,7 +74,7 @@ app.post("/v1/audio/transcriptions", async (c) => {
 
 app.notFound((c) => c.json({ error: "not found" }, 404));
 
-export function registerHttp(sdk: RunnerSdk): void {
+export function registerHttp(sdk: WorkloadSdk): void {
     const modelsMount = sdk.mounts.get(hostMountMid("models"));
     if (!modelsMount) {
         throw new Error("missing required host mount `models`");
@@ -82,7 +82,7 @@ export function registerHttp(sdk: RunnerSdk): void {
     asrRuntime = { modelsDir: modelsMount.path };
     configureTransformersCache(asrRuntime.modelsDir);
     void getTranscriber();
-    const handler = async (request: Request, context: RunnerHttpHandlerContext) =>
+    const handler = async (request: Request, context: WorkloadHttpHandlerContext) =>
         app.fetch(requestForMountedApp(request, context));
 
     sdk.mount({
@@ -98,7 +98,7 @@ export function registerHttp(sdk: RunnerSdk): void {
 
 function requestForMountedApp(
     request: Request,
-    context: RunnerHttpHandlerContext,
+    context: WorkloadHttpHandlerContext,
 ): Request {
     const url = new URL(request.url);
     const endpoint = context.endpoint.toString();

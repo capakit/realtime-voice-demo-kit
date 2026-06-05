@@ -1,7 +1,7 @@
-import { createRunnerSdk } from "@capakit/sdk";
+import { createWorkloadSdk } from "@capakit/sdk";
 import { registerHttp } from "./capakit_http.ts";
 
-const sdk = createRunnerSdk();
+const sdk = createWorkloadSdk();
 sdk.hijackConsoleLogging();
 
 registerHttp(sdk);

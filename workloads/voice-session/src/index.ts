@@ -1,7 +1,7 @@
-import { createRunnerSdk } from "@capakit/sdk";
+import { createWorkloadSdk } from "@capakit/sdk";
 import { startVoiceHttpServer } from "./capakit_http.ts";
 
-const sdk = createRunnerSdk();
+const sdk = createWorkloadSdk();
 sdk.hijackConsoleLogging();
 
 startVoiceHttpServer(sdk);

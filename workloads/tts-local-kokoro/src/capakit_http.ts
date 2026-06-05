@@ -1,6 +1,6 @@
 import { endpointPath, hostMountMid } from "@capakit/sdk";
-import type { RunnerHttpHandlerContext } from "@capakit/sdk";
-import type { RunnerSdk } from "@capakit/sdk";
+import type { WorkloadHttpHandlerContext } from "@capakit/sdk";
+import type { WorkloadSdk } from "@capakit/sdk";
 import { mountOaic } from "@capakit/sdk/oaic";
 import { env } from "@huggingface/transformers";
 import { KokoroTTS } from "kokoro-js";
@@ -82,7 +82,7 @@ function arrayBufferBody(bytes: Uint8Array): ArrayBuffer {
 
 app.notFound((c) => c.json({ error: "not found" }, 404));
 
-export function registerHttp(sdk: RunnerSdk): void {
+export function registerHttp(sdk: WorkloadSdk): void {
     const modelsMount = sdk.mounts.get(hostMountMid("models"));
     if (!modelsMount) {
         throw new Error("missing required host mount `models`");
@@ -106,7 +106,7 @@ export function registerHttp(sdk: RunnerSdk): void {
 
 function requestForMountedApp(
     request: Request,
-    context: RunnerHttpHandlerContext,
+    context: WorkloadHttpHandlerContext,
 ): Request {
     const url = new URL(request.url);
     const endpoint = context.endpoint.toString();

@@ -1,6 +1,6 @@
 import {
     endpointPath,
-    type RunnerSdk,
+    type WorkloadSdk,
     workloadMid,
 } from "@capakit/sdk";
 import { createOaicClient } from "@capakit/sdk/oaic";
@@ -74,11 +74,11 @@ const rmsThreshold = 0.012;
 
 const sourceDir = dirname(fileURLToPath(import.meta.url));
 const clientDistDir = join(sourceDir, "..", "dist", "client");
-let sdk: RunnerSdk;
+let sdk: WorkloadSdk;
 
-export function startVoiceHttpServer(runnerSdk: RunnerSdk): void {
-    sdk = runnerSdk;
-    const bind = parseBind(process.env.CAPAKIT_RUNNER_MANAGED_INGRESS_BIND);
+export function startVoiceHttpServer(workloadSdk: WorkloadSdk): void {
+    sdk = workloadSdk;
+    const bind = parseBind(process.env.CAPAKIT_WORKLOAD_INGRESS_BIND);
 
     Bun.serve({
         ...listenOptions(bind),
