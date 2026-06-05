@@ -5,11 +5,9 @@ Update kit-meta.json or capability.yml, then rerun the generator instead of hand
 
 # Realtime Voice
 
-Local-first AI app Kit for a browser voice conversation loop with speech recognition, local chat, and speech output.
+CapaKit AI app Kit for a browser voice conversation loop with speech recognition, local chat, and speech output.
 
 ![Realtime Voice screenshot](screenshot.png)
-
-**Tags:** `web-ui` `websocket` `voice` `audio` `speech-to-text` `text-to-speech` `llama.cpp` `transformers.js` `whisper` `kokoro` `local-ai` `react` `vite` `typescript` `bun`
 
 ## What It Does
 
@@ -20,15 +18,21 @@ Local-first AI app Kit for a browser voice conversation loop with speech recogni
 
 ## Technologies
 
-- CapaKit HTTP workload
-- WebSocket browser audio
-- Bundled llama.cpp AI app Kit dependency
-- Transformers.js Whisper ASR
-- Kokoro TTS
-- React
-- Vite
-- TypeScript
-- Bun
+- web-ui
+- websocket
+- voice
+- audio
+- speech-to-text
+- text-to-speech
+- llama.cpp
+- transformers.js
+- whisper
+- kokoro
+- local-ai
+- react
+- vite
+- typescript
+- bun
 
 ## App Kit Info
 
@@ -61,20 +65,28 @@ External services
 No external services declared.
 
 AI app Kit dependencies
-- llama: repo package https://github.com/capakit/llama-cpp-local-kit (default bundled AI app Kit)
+- llama: GitHub repo https://github.com/capakit/llama-cpp-local-kit (default bundled AI app Kit)
   Options passed:
   - context_size <- option llama_context_size (default: 8192)
   - default_model <- option chat_model (default: ggml-org/gemma-3-270m-it-GGUF:Q8_0)
   - gpu <- option gpu (default: metal)
+  - hydrate_models <- option chat_model (default: ggml-org/gemma-3-270m-it-GGUF:Q8_0)
   Mounts passed:
   - models <- models (Local model cache for llama.cpp, Whisper ASR, and Kokoro TTS)
+
+Use as dependency
+Add this to another Kit's capability.yml:
+dependencies:
+  realtime-voice:
+    source:
+      path: /Users/roman/Code/capakit/demo-kits/realtime-voice-demo-kit
 
 Commands
 - Run:
   capakit run https://github.com/capakit/realtime-voice-demo-kit \
     --mount models=~/.capakit/models
 - Test:
-  capakit test .
+  capakit test --kit /Users/roman/Code/capakit/demo-kits/realtime-voice-demo-kit
 ```
 
 ## Run
@@ -90,12 +102,6 @@ capakit run https://github.com/capakit/realtime-voice-demo-kit \
 capakit test .
 ```
 
-## Security
-
-Vault secrets are user-provided secrets available only to trusted integrations such as secure exit nodes. Kit secrets are Kit-local secrets that can be exposed to code workloads.
-
 ## About CapaKit
 
-CapaKit runs AI app Kits locally with isolated workloads, explicit mounts, and agent-friendly commands. Learn more at https://capakit.com.
-
-More AI app Kits: https://github.com/capakit/apps
+https://capakit.com
