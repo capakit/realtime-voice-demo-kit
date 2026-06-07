@@ -84,7 +84,7 @@ export function startVoiceHttpServer(workloadSdk: WorkloadSdk): void {
         ...listenOptions(bind),
         async fetch(request, server) {
             const url = mountedUrl(request);
-            if (lastPathSegment(url.pathname) === "voice-stack-e2e-smoke") {
+            if (lastPathSegment(url.pathname) === "checks-voice-stack-chat-asr-readiness-and-tts-output") {
                 if (request.method !== "POST") {
                     return Response.json({ error: "method not allowed" }, { status: 405 });
                 }
