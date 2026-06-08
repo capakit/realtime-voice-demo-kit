@@ -16,7 +16,7 @@ CapaKit AI app Kit for a browser voice conversation loop with speech recognition
 - Generates assistant replies through a bundled local llama.cpp dependency.
 - Speaks replies with a local Kokoro TTS model.
 
-## Technologies
+## Tags
 
 - web-ui
 - websocket
