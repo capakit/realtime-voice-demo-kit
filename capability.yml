@@ -32,7 +32,7 @@ options:
 dependencies:
   llama:
     source:
-      path: ../llama-cpp-local-kit
+      git: https://github.com/capakit/llama-cpp-local-kit
     options:
       default_model:
         from_option: chat_model
