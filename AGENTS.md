@@ -12,12 +12,16 @@ Install with the shell installer:
 curl -fsSL https://capakit.com/install.sh | sh
 ```
 
-Or download the CapaKit binary and use it directly.
+CapaKit macOS releases are Apple Developer ID-signed and notarized. The installer verifies the downloaded `capakit`
+binary's CapaKit Developer ID signature before installing it.
 
-Latest macOS downloads:
+Or install with Homebrew:
 
-- Apple Silicon: https://capakit.com/latest
-- Intel: https://capakit.com/latest/macos-x86_64
+```sh
+brew install capakit/tap/capakit
+```
+
+Manual release archives and checksums are available from https://github.com/capakit/cli/releases.
 
 ## Live Instructions
 
