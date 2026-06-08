@@ -84,7 +84,7 @@ export function startVoiceHttpServer(workloadSdk: WorkloadSdk): void {
         ...listenOptions(bind),
         async fetch(request, server) {
             const url = mountedUrl(request);
-            if (lastPathSegment(url.pathname) === "checks-voice-stack-chat-asr-readiness-and-tts-output") {
+            if (url.pathname === "/test/checks-voice-stack-chat-asr-readiness-and-tts-output") {
                 if (request.method !== "POST") {
                     return Response.json({ error: "method not allowed" }, { status: 405 });
                 }
@@ -674,10 +674,6 @@ function mountedUrl(request: Request): URL {
         url.pathname = url.pathname.slice("/http".length);
     }
     return url;
-}
-
-function lastPathSegment(pathname: string): string | undefined {
-    return pathname.split("/").filter(Boolean).at(-1);
 }
 
 function clientAssetPath(pathname: string): string | null {

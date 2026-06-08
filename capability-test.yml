@@ -3,10 +3,10 @@ tests:
     kind: http
     target:
       workload: voice-session
-      endpoint: /test
+      endpoint: http
     request:
       method: POST
-      path: /checks-voice-stack-chat-asr-readiness-and-tts-output
+      path: /test/checks-voice-stack-chat-asr-readiness-and-tts-output
     verbose_output:
       - $.body.asr_model_count
       - $.body.reply
