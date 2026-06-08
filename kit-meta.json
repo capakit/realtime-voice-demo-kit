@@ -47,5 +47,6 @@
       "typescript",
       "bun"
     ]
-  }
+  },
+  "license": "Apache-2.0"
 }
