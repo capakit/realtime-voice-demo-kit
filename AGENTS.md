@@ -1,6 +1,6 @@
-# CapaKit AI App
+# Kit for CapaKit
 
-This directory is a CapaKit Kit: the package/source unit for an AI app. Use the `capakit` CLI that matches the user's current workflow.
+This directory contains a Kit for CapaKit. Use the `capakit` CLI that matches the user's current workflow.
 
 ## Install CapaKit
 

@@ -5,7 +5,7 @@ Update kit-meta.json or capability.yml, then rerun the generator instead of hand
 
 # Realtime Voice
 
-CapaKit AI app Kit for a browser voice conversation loop with speech recognition, local chat, and speech output.
+Kit with a browser voice conversation loop, speech recognition, local chat, and speech output.
 
 ![Realtime Voice screenshot](screenshot.png)
 
@@ -34,10 +34,11 @@ CapaKit AI app Kit for a browser voice conversation loop with speech recognition
 - typescript
 - bun
 
-## App Kit Info
+## Kit Info
 
 ```text
-AI app Kit: realtime-voice
+Kit: realtime-voice
+License: Apache-2.0
 
 Exposes
 - Public path: /voice
@@ -64,8 +65,8 @@ Options:
 External services
 No external services declared.
 
-AI app Kit dependencies
-- llama: GitHub repo https://github.com/capakit/llama-cpp-local-kit (default bundled AI app Kit)
+Kit dependencies
+- llama: Git repo https://github.com/capakit/llama-cpp-local-kit (default bundled Kit)
   Options passed:
   - context_size <- option llama_context_size (default: 8192)
   - default_model <- option chat_model (default: ggml-org/gemma-3-270m-it-GGUF:Q8_0)
@@ -103,5 +104,7 @@ capakit test .
 ```
 
 ## About CapaKit
+
+CapaKit is a free runtime and CLI toolkit for building AI app Kits. When your agent builds, tests, or runs a Kit, it happens in isolation, not on your host.
 
 https://capakit.com

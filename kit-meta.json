@@ -2,7 +2,7 @@
   "schema": 1,
   "displayName": "Realtime Voice",
   "repo": "https://github.com/capakit/realtime-voice-demo-kit",
-  "description": "CapaKit AI app Kit for a browser voice conversation loop with speech recognition, local chat, and speech output.",
+  "description": "Kit with a browser voice conversation loop, speech recognition, local chat, and speech output.",
   "screenshot": "screenshot.png",
   "whatItDoes": [
     "Streams microphone audio from the browser to a CapaKit workload.",
