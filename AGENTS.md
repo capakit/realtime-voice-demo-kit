@@ -12,7 +12,7 @@ Install with the shell installer:
 curl -fsSL https://capakit.com/install.sh | sh
 ```
 
-CapaKit macOS releases are Apple Developer ID-signed and notarized. The installer verifies the downloaded `capakit`
+CapaKit macOS releases are signed and notarized. The installer verifies the downloaded `capakit`
 binary's CapaKit Developer ID signature before installing it.
 
 Or install with Homebrew:
